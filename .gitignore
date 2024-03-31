@@ -1,0 +1,33 @@
+# Ignorer les fichiers objet
+obj/
+lib/obj/
+
+# Ignorer les bibliothèques statiques
+lib/*.a
+
+# Ignorer les exécutables
+bin/
+
+# Ignorer les fichiers et dossiers de archives
+archives/
+*.tar*
+*.zip
+*.bak
+
+# Ignorer les fichiers de documentation générés
+doc/
+
+# Ignorer les fichiers temporaires d'édition
+*~
+*.swp
+*.tmp
+
+# Dossiers spécifiquesl'IDE
+.vscode/
+
+# Dossiers de construction
+build/
+
+# Fichiers d'environnement
+.env
+
