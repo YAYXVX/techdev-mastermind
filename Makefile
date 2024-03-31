@@ -14,8 +14,8 @@
 # --------------------------
 # Variables
 CC ?= gcc
-CFLAGS ?= -Wall -g -Iinc
-LDFLAGS ?= -L./lib/obj -lcolor
+CFLAGS ?= -Wall -g -Iinc -Ilib/inc
+LDFLAGS ?= -Llib -lcolor
 DOCGEN = doxygen
 EXTRA_CFLAGS ?=
 VG_FLAGS ?= --leak-check=full --show-leak-kinds=all --track-origins=yes
@@ -26,6 +26,7 @@ GDB_FLAGS ?=
 # Directories
 SRC_DIR = src
 OBJ_DIR = obj
+LIB_DIR = lib
 LIB_SRC_DIR = lib/src
 LIB_OBJ_DIR = lib/obj
 BIN_DIR = bin
@@ -39,6 +40,9 @@ MAIN_SOURCES = $(wildcard $(SRC_DIR)/*.c)
 MAIN_OBJECTS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(MAIN_SOURCES))
 LIB_SOURCES = $(wildcard $(LIB_SRC_DIR)/*.c)
 LIB_OBJECTS = $(patsubst $(LIB_SRC_DIR)/%.c, $(LIB_OBJ_DIR)/%.o, $(LIB_SOURCES))
+
+# Library name
+LIBRARY = $(LIB_DIR)/libcolor.a
 
 # Executable name
 EXEC = $(BIN_DIR)/mastermind
@@ -58,27 +62,31 @@ ARCHIVE_NAME = mastermind-project-$(shell date +%Y%m%d%H%M%S).tar
 #------------------------
 .PHONY: all help clean doc archive archive_compress valgrind gdb library
 
+
+
+
 all: library $(EXEC)
 
-library: $(LIB_OBJECTS)
+library: $(LIBRARY)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c $< -o $@
+$(LIBRARY): $(LIB_OBJECTS)
+	ar -crv $@ $(LIB_OBJECTS)
+	ranlib $@
 
 $(LIB_OBJ_DIR)/%.o: $(LIB_SRC_DIR)/%.c | $(LIB_OBJ_DIR)
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c $< -o $@
 
 $(EXEC): $(MAIN_OBJECTS) | $(BIN_DIR)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+$(OBJ_DIR) $(LIB_OBJ_DIR) $(BIN_DIR):
+	mkdir -p $@
 
-$(LIB_OBJ_DIR):
-	mkdir -p $(LIB_OBJ_DIR)
 
-$(BIN_DIR):
-	mkdir -p $(BIN_DIR)
+
 
 doc:
 	cd $(DOCSRC_DIR) && $(DOCGEN)
@@ -92,13 +100,15 @@ archive_compress:
 	tar $(EXCLUDES) -czvf $(ARCHIVES_DIR)/$(ARCHIVE_NAME).gz .
 
 clean:
-	rm -rf $(OBJ_DIR)/*.o $(LIB_OBJ_DIR)/*.o $(EXEC)
+	rm -rf $(OBJ_DIR)/*.o $(LIB_OBJ_DIR)/*.o $(BIN_DIR) $(LIB_DIR)/*.a
 
 valgrind:
 	valgrind $(VG_FLAGS) ./$(EXEC)
 
 gdb:
 	gdb $(GDB_FLAGS) ./$(EXEC)
+
+
 
 
 help:
