@@ -11,7 +11,7 @@ The user_i/o branch separates in multiple functions.
 #### Step 1
 
 It all starts with the selection of the difficulty by the user in **demande_user_gmode.c**, presenting two options which are:
-* [EASY] (#introduction)
+- [EASY](#introduction)
 * **_HARD_**  
 
 #### Step 2
