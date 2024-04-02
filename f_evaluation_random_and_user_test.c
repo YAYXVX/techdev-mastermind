@@ -86,12 +86,18 @@ int evaluation(char *machine_code) {
 
     // Loop for 10 tries
     for (int i = 0; i < tries; i++) {
-      printf("Nombre d'essaies restants: %d\n", tries);
+      int num_correct_colors = 0;
       tries_tmp = tries_tmp - 1;
         // Get user input for the color code
+      if (tries_tmp == 0){
+        printf("    ▁▁▁▁▁▁▁▁▁▁▁\n");
+        printf("    ┃GAME OVER┃\n");
+        printf("    ▔▔▔▔▔▔▔▔▔▔▔\n");
+        printf("Number of correct colors: %d\n", num_correct_colors);
+        printf("You've run out of tries.\n");
+        return 0;
+      }
         user_input(user_code);
-
-        int num_correct_colors = 0;
 
         // Check each color in the user's code
         for (int j = 0; j < 4; j++) {
@@ -103,23 +109,27 @@ int evaluation(char *machine_code) {
                 }
             }
         }
-        printf("Nombre d'essaies restants: %d\n", tries_tmp);
-        printf("Number of correct colors: %d\n", num_correct_colors);
-
         // If all colors are correct, exit the loop
+      printf("Number of correct colors: %d\n", num_correct_colors);
         if (num_correct_colors == 4) {
             printf("Congratulations! You've cracked the code!\n");
             return 1;
-        }
+      }
+      if (tries_tmp != 0){
+        printf("Nombre d'essaies restants: %d\n", tries_tmp);
+        printf("\n");
+      }
     }
-    printf("Game over! You've run out of tries.\n");
-    return 0;
+  return 0;
 }
 
 int main() {
     char sequence[5]; // Assuming we want a sequence of 4 letters + null terminator
     char input[5]; // Tampon pour stocker 4 caractères + le caractère nul
     // Generate a random sequence of 4 letters with each letter used only once
+    printf("    ▁▁▁▁▁▁▁▁▁▁▁▁\n");
+    printf("    ┃GAME START┃\n");
+    printf("    ▔▔▔▔▔▔▔▔▔▔▔▔\n");
     generateRandomSequence(sequence, 4);
     printf("Random sequence: %s\n", sequence);
     // printf("Random sequence generated: ****\n");
