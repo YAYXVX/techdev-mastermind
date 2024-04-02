@@ -1,0 +1,83 @@
+
+
+#   /$$$$$$$                                 /$$$$$$  /$$ /$$          
+#  | $$__  $$                               /$$__  $$|__/| $$          
+#  | $$  \ $$  /$$$$$$  /$$   /$$ /$$   /$$| $$  \__/ /$$| $$  /$$$$$$ 
+#  | $$  | $$ /$$__  $$|  $$ /$$/| $$  | $$| $$$$    | $$| $$ /$$__  $$
+#  | $$  | $$| $$  \ $$ \  $$$$/ | $$  | $$| $$_/    | $$| $$| $$$$$$$$
+#  | $$  | $$| $$  | $$  >$$  $$ | $$  | $$| $$      | $$| $$| $$_____/
+#  | $$$$$$$/|  $$$$$$/ /$$/\  $$|  $$$$$$$| $$      | $$| $$|  $$$$$$$
+#  |_______/  \______/ |__/  \__/ \____  $$|__/      |__/|__/ \_______/
+#                                 /$$  | $$                            
+#                                |  $$$$$$/                            
+#                                 \______/                             
+
+
+# Project related configuration options
+PROJECT_NAME           = "techdev-projet-outillage-martindelrioCarlos"
+PROJECT_BRIEF          = "A detailed documentation of the FizzBuzz game project."
+OUTPUT_DIRECTORY       = ../doc
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = English
+OPTIMIZE_OUTPUT_FOR_C  = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+PROJECT_LOGO = images/mastermind_logo.png
+
+
+# Paths and file patterns
+INPUT                  = ../src ../inc ../README.md
+FILE_PATTERNS          = *.c \
+                         *.h \
+                         *.md
+RECURSIVE              = YES
+EXCLUDE                =
+
+# Documented entities
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+STRIP_CODE_COMMENTS    = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# HTML output
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+# HTML_HEADER            = customHeader.html
+HTML_FOOTER            = 
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css custom.css
+# HTML_EXTRA_FILES       = images/mastermind_logo.png
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 250
+SEARCHENGINE           = YES
+SEARCH_INCLUDES        = YES
+SERVER_BASED_SEARCH    = YES
+
+# LaTeX output
+GENERATE_LATEX         = NO
+
+# Dot tool
+HAVE_DOT               = YES
+DOT_FONTNAME           = Helvetica
+DOT_FONTSIZE           = 10
+DOT_GRAPH_MAX_NODES    = 100
+MAX_DOT_GRAPH_DEPTH    = 1000
+DOT_TRANSPARENT        = YES
+CLASS_DIAGRAMS         = YES
+COLLABORATION_GRAPH    = YES
+UML_LOOK               = YES
+TEMPLATE_RELATIONS     = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+# Path adjustments
+FULL_PATH_NAMES        = NO
+# This is to remove part of the path if necessary
+# STRIP_FROM_PATH       =
