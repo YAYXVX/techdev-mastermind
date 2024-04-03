@@ -1,10 +1,19 @@
 # PROJET MASTERMIND
 
-(explain the game)
+## Introduction
 
-## How it works
+This project implements the classic game Mastermind, demonstrating skills of group work with git, modular programming, documentation, and debugging in a C environment. Furthermore, the git commits act as a journal of the improving group networking skills acquired throughout the project.
 
-(explain the functioning of the program)
+## Usage Manual
+
+To play the game, follow these steps:
+
+1. Compile the program using the Makefile: `make all` or simply `make`.
+  
+2. Run the executable located in `bin/` directory: `./bin/mastermind`.
+  
+3. Follow the instructions to play the game *[How to run the program](#how-to-run-the-program)*.
+
 
 ## Requirements
 
@@ -48,21 +57,33 @@ sudo pacman -S valgrind
 
 ~~~{.sh}
 To list all the available directories and files in your current position enter this: `ls`
-To access/enter the directory you aim for enter this: `cd [name_of_your_directory]/`
+To access/enter the directory you aim for enter this: `cd "name_of_your_directory"/`
 To return/leave from the current directory you are located on enter this: `cd ..`
 ~~~
 
-## How to run the program
+### Makefile
 
-* First place yourself in the same directory as the Makefile and type this to compile: `make`  
-* To run the program you must enter this in your terminal while you are placed in the directory **bin/**: `./main`  
-* The program will ask you to input a number, you can chose any number you wish, after doing so, press **enter**.  
-* To archive the program enter in the terminal: `make archive`  
-* To clean the generated object files and executable enter in the terminal: `make clean`  
-* To analyze the program's memory usage enter in the terminal: `make valgrind`  
-* To generate a documentation with Doxygen enter in the terminal: `make doc`  
-* To check the documentation, go to `doc/html/index.html` and open the file in a Web browser.  
-* Enjoy!
+Makefile contains a bunch of useful commands to improve your experience with the project, automating boring and repetitive tasks. Here are the commands to help you throughout your journey:
+
+- `make clean`: Clean the auto generated files.
+  
+- `make all`: Compile the project source files into an executable placed in `bin/`
+  
+- `make doc`: Create a html formatted documentation in `doc/` directory.
+
+- `make valgrind`: Debugging with valgrind command.
+
+- `make gdb`: Debugging with gdb command.
+
+- `make archive`: Archive the project.
+  
+- `make help`: Show the Makefile help.
+
+
+## How to run the program
+  
+* The program will ask you to input a number, you can chose any number you wish, after doing so, press **enter**.   
+* The only thing that rests to do is to enjoy!
 
 ## Challenges Encountered
 
