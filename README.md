@@ -63,3 +63,45 @@ To return/leave from the current directory you are located on enter this: `cd ..
 * To generate a documentation with Doxygen enter in the terminal: `make doc`  
 * To check the documentation, go to `doc/html/index.html` and open the file in a Web browser.  
 * Enjoy!
+
+## Challenges Encountered
+
+One of the main challenges was ensuring memory management efficiency and avoiding memory leaks, which was addressed using Valgrind as part of our debugging process.
+
+....more explanation...
+
+## Debugging command
+
+The memory debug was perfomed with `make valgrind`, nonetheless the explicit command is:
+
+```bash
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./bin/fizzbuzz
+```
+
+If errors were identified, then it was used jointly with the -s option to show in detail the errors, using makefile please do:
+
+```bash
+make EXTRA_VG_FLAGS="-s" valgrind
+```
+
+Further to this, if the error was not totally detected then `make gdb` was used with breakpoints in the suspicious functions.
+
+#### Known Issues
+
+- Issues.
+
+## Special Notes
+
+- **Commits**: Our Git history demonstrates the growth of understanding git over time, the improvement of atomic commit messages, and the structure of the commits.
+  
+- **Future improvements**: It could incorporate additional features like improving the output or interaction with the user. For instance, a bunch of examples are:
+  
+  - example.
+    
+  - example.
+    
+  - example.
+    
+
+Thank you for exploring the MASTERMIND project. Your feedback and contributions are welcomed!
+
