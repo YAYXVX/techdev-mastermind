@@ -19,47 +19,56 @@ To play the game, follow these steps:
 
 **Before heading to the project, please make sure that you have the needed tools in your system**:  
 
-    GCC : The C compiler.
-    Make : For generating files and combining the separated ones.
-    Doxygen : To generate a documentation of the program.
-    Valgrind : To analyse the memory usage of the program.
+1. `GCC` : The `C` compiler.
+2. `Make` : For generating files and combining the separated ones.
+3. `Doxygen` : To generate a documentation of the program
+4. `Valgrind` : To analyse the memory usage of the program.
 
 To configure these tools, employ the appropriate commands based on your operating system:
 
 ### Ubuntu/Debian
 
-~~~{.sh}
+```shell
 sudo apt install gcc
+
 sudo apt install make
+
 sudo apt install doxygen
+
 sudo apt install valgrind
-~~~
+```
 
 ### Fedora/CentOS/Red Hat
 
-~~~{.sh}
+```shell
 sudo dnf install gcc
+
 sudo dnf install make
+
 sudo dnf install doxygen
+
 sudo dnf install valgrind
-~~~
+```
 
 ### Archlinux
 
-~~~{.sh}
+```shell
 sudo pacman -S gcc
+
 sudo pacman -S make
+
 sudo pacman -S doxygen
+
 sudo pacman -S valgrind
-~~~
+```
 
 ## How to navigate through the Ubuntu Terminal
 
-~~~{.sh}
-To list all the available directories and files in your current position enter this: `ls`
-To access/enter the directory you aim for enter this: `cd "name_of_your_directory"/`
-To return/leave from the current directory you are located on enter this: `cd ..`
-~~~
+1. To list all the available directories and files in your current position, please enter: `ls`
+  
+2. To access the directory you aim for, enter: `cd "name_of_your_directory"/`
+  
+3. To return/leave from the current directory you are located on, please enter the command: `cd ..`
 
 ### Makefile
 
