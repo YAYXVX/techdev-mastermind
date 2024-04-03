@@ -1,3 +1,12 @@
+/**
+ * @file colors.c
+ * @brief Implementation of print_color function
+ *
+ * @author Martin
+ * 
+ * @ingroup color
+ */
+
 #include <stdio.h>
 #include "colors.h"
 
