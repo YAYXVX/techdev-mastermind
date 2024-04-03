@@ -85,20 +85,18 @@ int evaluation(char *machine_code) {
     char user_code[5];    // Buffer to store user's code
 
     // Loop for 10 tries
-    for (int i = 0; i < tries; i++) {
+    for (int i = 0; i <= tries; i++) {
       int num_correct_colors = 0;
-      tries_tmp = tries_tmp - 1;
         // Get user input for the color code
       if (tries_tmp == 0){
         printf("    ▁▁▁▁▁▁▁▁▁▁▁\n");
         printf("    ┃GAME OVER┃\n");
         printf("    ▔▔▔▔▔▔▔▔▔▔▔\n");
-        printf("Number of correct colors: %d\n", num_correct_colors);
         printf("You've run out of tries.\n");
         return 0;
       }
+      tries_tmp = tries_tmp - 1;
         user_input(user_code);
-
         // Check each color in the user's code
         for (int j = 0; j < 4; j++) {
             // Compare the color with each color in the machine's code
@@ -136,3 +134,4 @@ int main() {
     evaluation(sequence);
     return 0;
 }
+
