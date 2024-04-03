@@ -1,5 +1,4 @@
 
-
 #   /$$$$$$$                                 /$$$$$$  /$$ /$$          
 #  | $$__  $$                               /$$__  $$|__/| $$          
 #  | $$  \ $$  /$$$$$$  /$$   /$$ /$$   /$$| $$  \__/ /$$| $$  /$$$$$$ 
@@ -14,8 +13,8 @@
 
 
 # Project related configuration options
-PROJECT_NAME           = "techdev-projet-outillage-martindelrioCarlos"
-PROJECT_BRIEF          = "A detailed documentation of the FizzBuzz game project."
+PROJECT_NAME           = "techdev-mastermid-AYVACI_KELES_MARTIN"
+PROJECT_BRIEF          = "A detailed documentation of the mastermid game project."
 OUTPUT_DIRECTORY       = ../doc
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = English
