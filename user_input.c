@@ -77,10 +77,3 @@ void user_input(char *input) {
     }
   }
 }
-
-int main() {
-  char input[5]; // Tampon pour stocker 4 caractères + le caractère nul
-  user_input(input);
-  printf("Votre combinaison de couleurs est: %s\n", input);
-  return 0;
-}
