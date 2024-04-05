@@ -105,7 +105,7 @@ One of the main challenges was ensuring memory management efficiency and avoidin
 The memory debug was perfomed with `make valgrind`, nonetheless the explicit command is:
 
 ```bash
-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./bin/fizzbuzz
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./bin/mastermind
 ```
 
 If errors were identified, then it was used jointly with the -s option to show in detail the errors, using makefile please do:
