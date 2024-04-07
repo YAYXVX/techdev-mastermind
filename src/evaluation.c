@@ -10,6 +10,7 @@
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
 #include "evaluation.h"
+#include "user_input.h"
 #define NUM_COLORS 6
 
 int check_black_pins(char *user_code, char *machine_code, int length) {

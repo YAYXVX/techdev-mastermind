@@ -2,11 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
+#include "evaluation.h"
+#include "random.h"
+#include "repeat.h"
+#include "game_beggining.h"
+#include "user_input.h"
 #define NUM_COLORS 6
 
 // Main function
 int main() {
-    char sequence[5]; // Assuming we want a sequence of 4 letters + null terminator
     gamebeggining();
     repeat();
     return 0;
