@@ -2,7 +2,7 @@
  * \file user_input4.c
  * \brief Demande à l'utilisateur d'entrer une chaine de 4 caractères, et ensuite evalue la chaine entrée
  * code ---
- * \author AYVACI Yagiz
+ * \author AYVACI Yagiz, Martin
  */
 
 #include <stdio.h>
@@ -11,6 +11,37 @@
 #include <string.h> // for strcpy and strcmp
 #include "user_input.h"
 #define NUM_COLORS 6
+#include <errno.h>
+//#include <unistd.h>
+
+/*
+ * @brief Function for reading the file
+ */
+void read_code_from_file(char *sequence) {
+    // char cwd[1024]; // Store current directory path
+    // if (getcwd(cwd, sizeof(cwd)) != NULL) { // If directory path is retrieved
+    //     printf("Current working dir: %s\n", cwd); // Print current directory
+    // } else {
+    //     perror("getcwd() error"); // Print error if getcwd fails
+    // }
+
+    // Attempt to open file
+    FILE *file = fopen("fichier.txt", "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        exit(1);
+    }
+
+    // Try to read sequence from file
+    if (fscanf(file, "%s", sequence) != 1) {
+        printf("Error: Failed to read code from file.\n");
+        fclose(file);
+        exit(1);
+    }
+
+    fclose(file); // Close file
+}
+
 
 /**
  * fonction int verifier(char *input);

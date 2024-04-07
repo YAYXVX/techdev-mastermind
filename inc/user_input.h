@@ -17,6 +17,8 @@
 #ifndef USER_INPUT_H
 #define USER_INPUT_H
 
+void read_code_from_file(char *sequence);
+
 /**
  * @brief Validates the user's input.
  *
