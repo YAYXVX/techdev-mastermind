@@ -21,6 +21,7 @@ void repeat() {
         scanf("%s", answer);
         if ((strcmp(answer, "Oui") == 0) || (strcmp(answer, "oui") == 0)) {
             printf("Le jeu recommence!\n\n");
+            system("clear");
             gamebeggining();
         } else if ((strcmp(answer, "Non") == 0) || (strcmp(answer, "non") == 0)) {
             printf("Merci d'avoir joué!\n");
