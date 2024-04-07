@@ -1,6 +1,6 @@
 /**
  * @file game_beggining.h
- * @brief Prompts the user to start the MASTERMIND game and asks whether they want to play in Hard or Easy mode.
+ * @brief Prompts the user to start the MASTERMIND game and asks whether they want to play in Hard, Easy mode or file mode.
  *
  * @details This header file contains declarations of functions used for initializing the game,
  * choosing the game difficulty, generating random sequences based on the selected difficulty,
