@@ -39,7 +39,20 @@ void read_code_from_file(char *sequence) {
         exit(1);
     }
 
-    fclose(file); // Close file
+    // Check if the read sequence is valid
+    int sequence_length = strlen(sequence);
+    if (sequence_length != 4) {
+        printf("Invalid code length in the file. Please provide a code with exactly 4 letters.\n");
+        exit(1);
+    }
+
+    for (int i = 0; i < sequence_length; i++) {
+        if (sequence[i] != 'R' && sequence[i] != 'C' && sequence[i] != 'Y' &&
+            sequence[i] != 'G' && sequence[i] != 'B' && sequence[i] != 'P') {
+            printf("Invalid character in the file. Only letters (R, C, Y, G, B, P) are allowed.\n");
+            exit(1);
+        }
+    }
 }
 
 
