@@ -26,7 +26,7 @@ void read_code_from_file(char *sequence) {
     // }
 
     // Attempt to open file
-    FILE *file = fopen("secret_sequence.txt", "r");
+    FILE *file = fopen("secret-sequence.txt", "r");
     if (file == NULL) {
         perror("Error opening file");
         exit(1);
