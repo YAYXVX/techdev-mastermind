@@ -93,10 +93,16 @@ To view the generated documentation, follow these steps:
 1. Navigate to `doc/html/`.
 2. Open **index.html** with a web browser to access documentation, including detailed function descriptions, class overviews, and project workflows accompanied by diagrams.
 
-### How to run the program
-
-* The program will ask you to input a number, you can chose any number you wish, after doing so, press **enter**.
-* The only thing that rests to do is to enjoy!
+## How to run the program
+  
+* The program will welcome you to the game and ask you which gamemode you'd like to play between **HARD**, **EASY** and **file** mode.  
+  * **Hard** mode: If the user input is **`hard`**, **`Hard`** or **`HARD`**. The program will take it as a valid input for the **_HARD_** mode and will announce to the user that the mode selection was successful.  
+  * **EASY** mode: If the user input is **`easy`**, **`Easy`** or **`EASY`**. The program will take it as a valid input for the **_EASY_** mode and will announce to the user that the mode selection was successful.  
+  * **file** mode: If the user input is **`file`**. The program will will take it as a valid input for the **_file_** mode and will announce to the user that the mode selection was successful.  
+* The generated code will depend from the mode selection, changing its difficulty.  
+* The user will have 10 tries in total to find the correct color code combination.
+  * If the user wastes all 10 attempts, the program will announce the user's defeat and ask the user if he wishes to replay. If yes, the game clears the terminal and restarts with the mode selection.
+  * If the user finds the right color code combination, the program will announce the user's victory and ask the user if he wishes to replay. If yes, the game clears the terminal and restarts with the mode selection.  
 
 ### Loading a combination from a file
 
