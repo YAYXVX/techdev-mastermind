@@ -25,7 +25,7 @@ int gamebeggining() {
     printf("Bienvenu au jeu MASTERMIND!!!\n");
     char mode[10];
     do {
-        printf("Souhaitez-vous jouer en mode HARD ou EASY ? \n");
+        printf("Souhaitez-vous jouer en mode HARD ou EASY ? \n>");
         scanf(" %s", mode);
 
         // Clear the input buffer
