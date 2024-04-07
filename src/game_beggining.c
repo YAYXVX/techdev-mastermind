@@ -27,7 +27,7 @@ int gamebeggining() {
     char mode[10]; // Increased size to accommodate "fichier" option
     do {
         printf("Souhaitez-vous jouer en mode HARD, EASY, ou à partir d'un fichier ? \n>");
-        scanf("%s", mode);
+        scanf(" %s", mode);
 
         // Clear the input buffer
         while (getchar() != '\n'); // Consume characters until newline is encountered
