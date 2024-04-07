@@ -50,7 +50,7 @@ int gamebeggining() {
     printf("    ▁▁▁▁▁▁▁▁▁▁▁▁\n");
     printf("    ┃GAME START┃\n");
     printf("    ▔▔▔▔▔▔▔▔▔▔▔▔\n");
-    printf("Random sequence: %s\n", sequence);
+    printf("Random sequence: ****\n");
     evaluation(sequence);
     return 0;
 }
