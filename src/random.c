@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
+#include "random.h"
 #define NUM_COLORS 6
 
 // Function to generate a random sequence of letters

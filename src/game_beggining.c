@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
+#include "game_beggining.h"
 #define NUM_COLORS 6
 
 // Function to start the game

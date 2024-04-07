@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
+#include "user_input.h"
 #define NUM_COLORS 6
 
 /**

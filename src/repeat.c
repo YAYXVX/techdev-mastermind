@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
+#include "repeat.h"
 #define NUM_COLORS 6
 
 void repeat() {
