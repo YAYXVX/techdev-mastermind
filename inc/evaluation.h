@@ -1,6 +1,6 @@
 /**
  * @file evaluation.h
- * @brief Defines the functions for evaluating the user's guesses against the machine code in the game Mastermind.
+ * @brief Defines the functions for evaluating the user's guesses against the machine code or file code in the game Mastermind.
  *
  * @details Declarations of the functions that control the evaluation logic
  * for the Mastermind game. These functions determine the correctness of the user's guesses
