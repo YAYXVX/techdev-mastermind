@@ -93,14 +93,14 @@ doc:
 
 archive:
 	mkdir -p $(ARCHIVES_DIR)
-	tar $(EXCLUDES) -cvf $(ARCHIVES_DIR)/$(ARCHIVE_NAME) .
+	tar --exclude='.git' $(EXCLUDES) -cvf $(ARCHIVES_DIR)/$(ARCHIVE_NAME) .
 
 archive_compress:
 	mkdir -p $(ARCHIVES_DIR)
 	tar $(EXCLUDES) -czvf $(ARCHIVES_DIR)/$(ARCHIVE_NAME).gz .
 
 clean:
-	rm -rf $(OBJ_DIR)/*.o $(LIB_OBJ_DIR)/*.o $(BIN_DIR) $(LIB_DIR)/*.a
+	rm -rf $(DOC_DIR) $(OBJ_DIR)/*.o $(LIB_OBJ_DIR)/*.o $(BIN_DIR) $(LIB_DIR)/*.a
 
 valgrind:
 	valgrind $(VG_FLAGS) ./$(EXEC)
