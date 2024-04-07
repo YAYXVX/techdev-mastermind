@@ -55,3 +55,7 @@ To view the generated documentation, follow these steps:
 
 1. Navigate to `doc/html/`.
 2. Open **index.html** with a web browser to access documentation, including detailed function descriptions, class overviews, and project workflows accompanied by diagrams.
+
+#### Loading a combination from a file
+
+- **From terminal with echo**: The user can upload their own combination to the **secret_sequence.txt** file with the echo command as shown here: `echo <color sequence> > secret_sequence.txt.  
