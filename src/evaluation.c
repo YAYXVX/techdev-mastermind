@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
-#include "evaluation.h"
 #include "user_input.h"
 #define NUM_COLORS 6
 
@@ -42,10 +41,15 @@ int check_white_pins(char *user_code, char *machine_code, int length) {
 }
 
 void evaluation(char *machine_code) {
-    const int tries = 4;
+    const int tries = 10;
     char user_code[30], machine_code_copy[5], user_code_copy[5];
     int tries_left = tries;
 
+  printf("Veuillez entrer votre combinaison de 4 lettres (R,C,Y,G,B,P): \n");
+
+  printf("\n| guess # | guess | result             | tries left |\n");
+  printf("| ------- | ----- | ------------------ | ---------- | Votre code: ");
+  
     for (int i = 0; i < tries; i++) {
         strcpy(machine_code_copy, machine_code);
         user_input(user_code);
@@ -53,26 +57,24 @@ void evaluation(char *machine_code) {
 
         int black_pins = check_black_pins(user_code_copy, machine_code_copy, 4);
         int white_pins = check_white_pins(user_code_copy, machine_code_copy, 4);
-
-        printf("Number of black pins: %d\n", black_pins);
-        printf("Number of white pins: %d\n", white_pins);
-
-        if (black_pins == 4) {
-            printf("    ▁▁▁▁▁▁▁▁▁\n");
-            printf("    ┃YOU WIN┃\n");
-            printf("    ▔▔▔▔▔▔▔▔▔\n");
-            printf("Congratulations! You've cracked the code!\n");
-            return;
-        }
-
         tries_left--;
-        if (tries_left > 0) {
-            printf("Number of tries remaining: %d\n\n", tries_left);
-        }
+
+      printf("| %-7d | %-5s | black: %d, white: %d | %-10d | Votre code: ", i+1, user_code, black_pins, white_pins, tries_left);
+
+      if (black_pins == 4) {
+          printf("\n");
+          printf("    ▁▁▁▁▁▁▁▁▁\n");
+          printf("    ┃YOU WIN┃\n");
+          printf("    ▔▔▔▔▔▔▔▔▔\n");
+          printf("Toutes nos félicitations! Vous avez déchiffré le code !\n");
+          return;
+      }
     }
 
-    printf("    ▁▁▁▁▁▁▁▁▁▁▁\n");
-    printf("    ┃GAME OVER┃\n");
-    printf("    ▔▔▔▔▔▔▔▔▔▔▔\n");
-    printf("You've run out of tries.\n");
-}
+  printf("\n");
+  printf("    ▁▁▁▁▁▁▁▁▁▁▁\n");
+  printf("    ┃GAME OVER┃\n");
+  printf("    ▔▔▔▔▔▔▔▔▔▔▔\n");
+  printf("    WOMP WOMP!!\n");
+  printf("Vous n'avez plus d'essais :[\n");
+  }

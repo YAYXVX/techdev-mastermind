@@ -74,7 +74,6 @@ void user_input(char *input) {
     int valid_input = 0;
 
     while (valid_input == 0) {
-        printf("Veuillez entrer votre combinaison de 4 lettres (R,C,Y,G,B,P): \n");
         scanf("%s", input); // Read user input
 
         if (verifier(input)) {
