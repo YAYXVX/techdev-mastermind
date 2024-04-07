@@ -6,6 +6,10 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h> // for strcpy and strcmp
+#define NUM_COLORS 6
 
 /**
  * fonction int verifier(char *input);
@@ -22,35 +26,35 @@
  */
 
 int verifier(char *input) {
-  int input_length = 0;
+    int input_length = 0;
 
-  // Calculer la longueur de l'entrée
-  while (input[input_length] != '\0') {
-    input_length++;
-  }
+    // Calculate the length of the input
+    while (input[input_length] != '\0') {
+        input_length++;
+    }
 
-  // Vérifier si la longueur est différente de 4
-  if (input_length != 4) {
-    // Si la longueur est inférieure à 4
-    if (input_length < 4) {
-      printf("Veuillez entrer exactement 4 lettres.\n");
+    // Check if the length is different from 4
+    if (input_length != 4) {
+        // If the length is less than 4
+        if (input_length < 4) {
+            printf("Veuillez entrer exactement 4 lettres.\n");
+        }
+        // If the length is greater than 4
+        else {
+            printf("Veuillez entrer seulement 4 lettres.\n");
+        }
+        return 0; // Input is not valid
     }
-    // Si la longueur est supérieure à 4
-    else {
-      printf("Veuillez entrer seulement 4 lettres.\n");
-    }
-    return 0; // L'entrée n'est pas valide
-  }
 
-  // Vérifier la compatibilité des lettres
-  for (int i = 0; i < 4; i++) {
-    if (input[i] != 'R' && input[i] != 'C' && input[i] != 'Y' &&
-        input[i] != 'G' && input[i] != 'B' && input[i] != 'P') {
-      printf("Les lettres doivent correspondre strictement à (R, C, Y, G, B, P).\n");
-      return 0; // L'entrée n'est pas valide
+    // Check letter compatibility
+    for (int i = 0; i < 4; i++) {
+        if (input[i] != 'R' && input[i] != 'C' && input[i] != 'Y' &&
+            input[i] != 'G' && input[i] != 'B' && input[i] != 'P') {
+            printf("Les lettres doivent correspondre strictement à (R, C, Y, G, B, P).\n");
+            return 0; // Input is not valid
+        }
     }
-  }
-  return 1; // L'entrée est valide
+    return 1; // Input is valid
 }
 
 /**
@@ -66,14 +70,14 @@ int verifier(char *input) {
  */
 
 void user_input(char *input) {
-  int valid_input = 0;
+    int valid_input = 0;
 
-  while (valid_input == 0) {
-    printf("Veuillez entrer votre combinaison de 4 lettres (R,C,Y,G,B,P): \n");
-    scanf("%s", input); // Lire l'entrée utilisateur
+    while (valid_input == 0) {
+        printf("Veuillez entrer votre combinaison de 4 lettres (R,C,Y,G,B,P): \n");
+        scanf("%s", input); // Read user input
 
-    if (verifier(input)) {
-      valid_input = 1; // Marquer l'entrée comme valide
+        if (verifier(input)) {
+            valid_input = 1; // Mark input as valid
+        }
     }
-  }
 }

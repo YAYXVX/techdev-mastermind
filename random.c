@@ -1,3 +1,10 @@
+/**
+ * \file user_input4.c
+ * \brief Demande à l'utilisateur d'entrer une chaine de 4 caractères, et ensuite evalue la chaine entrée
+ * code ----
+ * \author AYVACI Yagiz
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -8,10 +15,10 @@
 void generateRandomSequence_HARD(char *sequence, int length) {
     // Array containing the available letters
     char colors[NUM_COLORS] = {'R', 'C', 'Y', 'G', 'B', 'P'};
-  for (int i = 0; i < length; i++) {
-  int index = rand() % NUM_COLORS;
-  sequence[i] = colors[index];
-  }
+    for (int i = 0; i < length; i++) {
+        int index = rand() % NUM_COLORS;
+        sequence[i] = colors[index];
+    }
 }
 
 // Function to shuffle an array
