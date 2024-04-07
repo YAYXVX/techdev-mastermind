@@ -12,6 +12,8 @@ To play the game, follow these steps:
 
 2. Run the executable located in `bin/` directory: `./bin/mastermind`.
 
+2.2 If the file mode does not work, please do `mv secret-sequence.txt bin/secret-sequence.txt`
+
 3. Follow the instructions to play the game *[How to run the program](#how-to-run-the-program)*.
 
 
@@ -131,6 +133,36 @@ make EXTRA_VG_FLAGS="-s" valgrind
 ```
 
 Further to this, if the error was not totally detected then `make gdb` was used with breakpoints in the suspicious functions.
+
+## Group Project Report
+
+### Work Organization
+
+Our group initially had three members, with the tasks distributed by preference and strenghteness. One member focused on the core coding of the game, another took on responsibilities related to the Makefile, documentation, comments, and library management. Unfortunately, due to personal circumstances, our third member left in the final week, leaving the remaining tasks to the two members.
+
+### Development Process
+
+The project's development followed a beginers structure approach and due to being the first time working in group, plus the unexpected departure of a team member posed significant challenges, we had to do the reorganization of the tasks in the way. Particularly after feedback from our instructo wich highlited an imbalance in the work distribution. The person that was assigned to do the Makefile, documentation and library creation took on additional responsibilities, including managing header files and ensuring overall project functionality.
+
+### Challenges and Adaptations
+
+One of our primary challenges was the sudden reduction in our team's size, in addition to seeing that the work distribution was not that of an experimented developper, led to a crucial reevaluation of roles in the final project phase.
+
+### Design Choices
+
+Our design decisions were influenced by the need for modularity, readability, and ease of maintenance recomended by the professors. Additionally, we focused on coomprehensive documentation and code comments to enhance readability and collaboration.
+
+### Additional Features
+
+Despite the challenges, we were committed to not only meeting the basic requirements but also implementing additional features that would enrich the user experience. These included:
+
+- **Advanced Error Handling:** Ensuring robustness in user input and file handling.
+- **Modular Code Structure:** Enhancing code maintainability and readability.
+- **Comprehensive Documentation:** Utilizing Doxygen for detailed documentation with submodular approach, improving code navigation and understanding.
+
+### Conclusion
+
+The journey of this projet was one with great challenges and hurdles all along the way. It taught us the importance of flexibility, effective communication, and well work distribution in teamwork. We are proud that these experiences and challenges have contributed to our growth as developers.
 
 ## Special Notes
 
