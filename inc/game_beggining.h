@@ -15,7 +15,7 @@
 #define NUM_COLORS 6
 
 /**
- * @brief Starts the game by welcoming the player, and prompts them to choose between Hard and Easy mode.
+ * @brief Starts the game by welcoming the player, and prompts them to choose between Hard, Easy mode and file mode.
  *
  * @details This function seeds the random number generator, prompts the user to select a game mode,
  * generates a random sequence based on the chosen difficulty, and starts the game evaluation.
