@@ -10,6 +10,7 @@
 #include <time.h>
 #include <string.h> // for strcpy and strcmp
 #include "user_input.h"
+#include "colors.h"
 #define NUM_COLORS 6
 
 int check_black_pins(char *user_code, char *machine_code, int length) {
@@ -40,6 +41,15 @@ int check_white_pins(char *user_code, char *machine_code, int length) {
     return white_pins;
 }
 
+void colorer_user_code(const char *user_code) {
+    char color_char[2] = {'\0', '\0'}; // Create color string
+    for (int i = 0; user_code[i] != '\0' && i < 4; i++) {
+        color_char[0] = user_code[i]; // Set color character
+        print_color(color_char, user_code[i]); // Print with color
+    }
+}
+
+
 void evaluation(char *machine_code) {
     const int tries = 10;
     char user_code[30], machine_code_copy[5], user_code_copy[5];
@@ -49,7 +59,7 @@ void evaluation(char *machine_code) {
 
   printf("\n| guess # | guess | result             | tries left |\n");
   printf("| ------- | ----- | ------------------ | ---------- | Votre code: ");
-  
+
     for (int i = 0; i < tries; i++) {
         strcpy(machine_code_copy, machine_code);
         user_input(user_code);
@@ -59,7 +69,9 @@ void evaluation(char *machine_code) {
         int white_pins = check_white_pins(user_code_copy, machine_code_copy, 4);
         tries_left--;
 
-      printf("| %-7d | %-5s | black: %d, white: %d | %-10d | Votre code: ", i+1, user_code, black_pins, white_pins, tries_left);
+      printf("| %-7d | ", i + 1);
+      colorer_user_code(user_code);
+      printf("  | black: %d, white: %d | %-10d | Votre code: ", black_pins, white_pins, tries_left);
 
       if (black_pins == 4) {
           printf("\n");
