@@ -1,6 +1,6 @@
 /**
  * @file game_beggining.h
- * @brief Prompts the user to start the MASTERMIND game and asks whether they want to play in Hard or Easy mode.
+ * @brief Prompts the user to start the MASTERMIND game and asks whether they want to play in Hard, Easy mode or file mode.
  *
  * @details This header file contains declarations of functions used for initializing the game,
  * choosing the game difficulty, generating random sequences based on the selected difficulty,
@@ -15,7 +15,7 @@
 #define NUM_COLORS 6
 
 /**
- * @brief Starts the game by welcoming the player, and prompts them to choose between Hard and Easy mode.
+ * @brief Starts the game by welcoming the player, and prompts them to choose between Hard, Easy mode and file mode.
  *
  * @details This function seeds the random number generator, prompts the user to select a game mode,
  * generates a random sequence based on the chosen difficulty, and starts the game evaluation.

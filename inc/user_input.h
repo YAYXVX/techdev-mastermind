@@ -17,6 +17,14 @@
 #ifndef USER_INPUT_H
 #define USER_INPUT_H
 
+/**
+ * @brief Reads a game sequence from secret-sequence.txt
+ *
+ * @details This function is crucial for enhancing user experience, permiting the user load
+ * their own game color sequences.
+ *
+ * @params sequence A char array to hold the generated sequence.
+ */
 void read_code_from_file(char *sequence);
 
 /**
