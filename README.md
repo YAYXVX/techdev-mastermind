@@ -58,4 +58,4 @@ To view the generated documentation, follow these steps:
 
 #### Loading a combination from a file
 
-- **From terminal with echo**: The user can upload their own combination to the **secret_sequence.txt** file with the echo command as shown here: `echo <color sequence> > secret_sequence.txt.  
+- **From terminal with echo**: The user can upload their own combination to the **secret_sequence.txt** file with the echo command as shown here: `echo <color sequence> > secret_sequence.txt`.  
