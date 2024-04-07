@@ -59,3 +59,4 @@ To view the generated documentation, follow these steps:
 #### Loading a combination from a file
 
 - **From terminal with echo**: The user can upload their own combination to the **secret_sequence.txt** file with the echo command as shown here: `echo <color sequence> > secret_sequence.txt`.  
+- **From the file itself**: The user can access the secret_sequence.txt from the same directory as (makefile OU bin/secret_sequence.txt). And from there they can write their own combination of 4 letters from the 6 colors.  
