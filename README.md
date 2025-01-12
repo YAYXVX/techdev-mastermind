@@ -1,4 +1,4 @@
->This repository contains contributions from **Carlos's GitLab** (my colleague), primarily related to the makefile and color library. The majority of the development, including the game's structure and core code, was authored by me, **Yagiz Ayvaci**.
+>This repository contains contributions from **Carlos's GitLab** (my colleague), primarily related to the makefile, documentation and color library. The majority of the development, including the game's structure and core code, was authored by me, **Yagiz Ayvaci**.
 
 # PROJET MASTERMIND
 
